@@ -1,0 +1,19 @@
+In [4]:
+from selenium import webdriver # Used to import the driver
+In [7]:
+def bot(usr,pas):
+    
+    br=webdriver.Firefox() # you can import driver for any browser but install geckodriver for thet browser
+    br.get("Enter your link")
+    user=br.find_element_by_css_selector("#Enter the id name of id box using inspect") 
+    user.clear()
+    user.send_keys(usr) # Fill the email box by given username or email id
+    pasd=br.find_element_by_css_selector("#Enter the id name of password box using inspect")
+    pasd.clear()
+    pasd.send_keys(pas) # Fill the password filled by given password 
+    btn=br.find_element_by_css_selector("#Enter the id name of login button using inspect")
+    btn.click() # Auto click the button 
+    
+#main driver code
+
+bot(" enter your id "," enter your password ")
